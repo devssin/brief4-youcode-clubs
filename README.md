@@ -1,4 +1,4 @@
-# Gestion des Clubs de Youcode Maroc
+# brief4-youcode-clubs
 
 <div style="margin:auto;width:40%">
 <img src="./diagrammes/logo-youcode-ma.png">
@@ -20,3 +20,7 @@
         <img style="width:100%" src="./diagrammes/SequenceDiagram.jpg">
     </div>
 </div>
+
+
+
+## 🔗 [Le lien de table Trello](https://trello.com/b/PNrbxSgy/gestion-des-clubs-de-youcode-trello)
