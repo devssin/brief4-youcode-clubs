@@ -71,4 +71,7 @@ CREATE TABLE membre(
 
 INSERT INTO membre VALUES(1,1,'President');
 INSERT INTO membre VALUES(2,1,'Consultant');
+INSERT INTO membre VALUES(3,1,'membre');
+
+
 
