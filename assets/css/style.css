@@ -1,0 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  all: unset;
+  color: white;
+}
+a:hover {
+  color: whitesmoke;
+}/*# sourceMappingURL=style.css.map */

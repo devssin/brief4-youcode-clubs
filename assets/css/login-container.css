@@ -1,0 +1,19 @@
+.login-container-form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 20px;
+}
+.login-container-form .img-right img {
+  width: 100%;
+}
+.login-container-form .login-form-container {
+  margin: auto 2rem;
+}
+
+@media (max-width: 900px) {
+  .login-container-form {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}/*# sourceMappingURL=login-container.css.map */
