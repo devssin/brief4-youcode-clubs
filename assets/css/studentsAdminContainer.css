@@ -1,0 +1,37 @@
+.students-admin-container {
+  width: 85%;
+  margin: 1em auto 3em auto;
+}
+.students-admin-container .profile-preview {
+  width: 150px;
+  margin: 0em auto 2em auto;
+}
+.students-admin-container .profile-preview img {
+  width: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.students-admin-container form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.students-admin-container button {
+  justify-self: start;
+}
+
+@media (max-width: 666px) {
+  .students-admin-container form {
+    grid-template-columns: 1fr;
+  }
+}
+#profile_preview {
+  transition: 0.3s ease-in-out;
+}
+
+.club-search-information {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}/*# sourceMappingURL=studentsAdminContainer.css.map */

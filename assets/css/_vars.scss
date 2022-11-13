@@ -1,0 +1,43 @@
+
+// underscore on the file make scss not generate his css file and maping file 
+//we just want to make import of the file 
+
+//colors
+$body-color: #FCF8F8;
+$heading-color: #000000;
+$sub-heading-color: #231F20;
+$primary-color: #E99C2E;
+$primary-orange: #E99C2E;
+$secondary-color: #616060;
+$secondary-blue-color :#82368C;
+$links-color: #000000;
+$links-color-hover: $primary-color;
+$card-bg-color: #F5EDED;
+$text-color-white : #FFFFFF;
+
+//Fonts
+$body-font: Roboto,
+sans-serif;
+
+
+//function 
+//set text Color based on background color
+@function text-color($color) {
+    @if(lightness($color)>70) {
+        @return #333;
+    }
+
+    @else {
+        @return #ffff;
+
+    }
+
+}
+
+//set bg and Text based on primary color 
+
+@mixin background-color($color) {
+    background-color: $color;
+    color: text-color($color);
+
+}

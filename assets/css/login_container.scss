@@ -1,0 +1,58 @@
+@import 'vars';
+.index-login-login{
+    width: 85%;
+    margin: auto;
+    background-color: $text-color-white;
+}
+
+.logic-welcome{
+    margin: 2em 0;
+    
+    h1{
+        color: $primary-orange;
+        margin: 0.4em 0;
+        
+    }
+    p{
+        color: gray;
+        
+    }
+}
+
+.login-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+
+.login-form{
+    margin:  5% 20%;
+    
+}
+.login-img{
+    width: 100%;
+    img{
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+
+@media (min-width:666px) {
+    .login-container{
+        height: 80vh;
+    }
+}
+@media (max-width:666px) {
+    .login-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .login-form{
+        margin:  10%;
+        
+    }
+}
