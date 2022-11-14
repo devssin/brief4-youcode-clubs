@@ -1,17 +1,112 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+@import 'vars';
+@import 'utilities';
+@import 'buttons';
+@import 'inputs';
+@import 'home_clubs_preview';
+@import 'admin_dashboard';
+@import 'club_admin.dashboard';
+@import 'studentsAdminContainer';
+
+
+/*# sourceMappingURL=style.css.map */
+
+
+.navbar-container{
+  font-family: $body-font;
+  width: 100%;
+  background-color: whitesmoke;
+  color:rgb(29, 27, 27);
+  padding:  2em;
+  display: flex;
+  justify-content: space-between;
 }
 
+.navbar-container span{
+  color: orange;
+}
 
-a{
-    text-decoration: none;
-    all: unset;
-    color: white;
+.nav-login{
+  display: flex;
+  list-style: none;
+  gap: 1em;
+}
+
+.nav-login a{
+  text-decoration: none;
+  background-color: $sub-heading-color;
+  padding: 0.7em 1.5em;
+  border-radius: 4px;
+  color: $text-color-white;
+  transition: 0.2s ease-in-out;
+  &:hover,&:focus{
+    opacity: 0.96;
+  }
+}
+
+footer{
+    background-color: $sub-heading-color;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    margin: auto;
+    height: 15vh;
+    p,a,h3,h1{
+        color: $text-color-white;
+    }
     
-    &:hover{
-        color: whitesmoke;
+    ul{
+        display: inline-block;
+        width: 100%;
+        margin: auto;
+    }
+    li{
+        margin: 0 1em;
+        display: inline-block;
+        
+    }
+    a{
+        text-decoration: none;
+        color: $primary-orange;
     }
 }
 
+a{
+  text-decoration: none;
+}
+
+.apprenat-img-profile{
+  border-radius: 50%;
+}
+
+.header-section-index{
+  width: 100%;
+  margin: auto;
+  height: 50vh;
+  background-image: url("../images/youcode_students_1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: $text-color-white;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  *{
+    font-size: 3rem;
+    color: $primary-orange;
+  }
+  
+  h1{
+    
+    filter: blur(0.01rem);
+  }
+}
+
+.navbar-youcode-logo{
+  width: 150px;
+  
+  img{
+    width: 100%;
+  }
+}

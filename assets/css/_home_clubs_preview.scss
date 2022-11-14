@@ -1,0 +1,85 @@
+.home-container-club-review{
+    width: 100%;
+    // height: 100vh;
+    line-height: 1.6;
+    .clubs-cards{
+        width: 85%;
+        margin: 1em auto;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit,minmax(350px , 1fr));
+        justify-items: center;
+        transition: 0.3s ease-in;
+        
+    }
+    .club-card{
+        cursor: pointer;
+        border-radius: 3px;
+        -webkit-box-shadow: 0px 0px 2px 1px rgba(169,90,255,0.16); 
+        box-shadow: 0px 0px 2px 1px rgba(169,90,255,0.16);
+        max-width: 400px;
+        padding: 1em;
+        transition: 0.2s ease-in-out;
+        
+        &:hover{
+            // background-color: rgb(255, 247, 247);
+            transform: scale(1.01);
+        }
+    }
+    .club-member{
+        margin: 0.6em 0;
+        display: flex;
+        flex-wrap: wrap;
+        // grid-template-columns: repeat(auto-fit , minmax(60px ,1fr));
+        gap: -10px;
+        justify-content: center;
+        justify-items:center ;
+    }
+    .club-logo{
+        width: 40%;
+        margin: auto;
+        img{
+            width: 100%;
+            border-radius: 50%;  
+        }
+    }
+    .member{
+        width: 60px;
+        text-align: center;
+        
+        img{
+            width: 100%;
+            border-radius: 50%;
+        }
+        p{
+            font-size: 0.8rem;
+            text-align: center;
+            // color: ;
+        }
+    }
+    .member-profile{
+        width: 70px;
+        height: 70px;
+        // left: -10px;
+        // margin: -10px;
+        img{
+            border: 4px solid $text-color-white;
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            transition: 0.03 ease-in;
+            &:hover,&:active{
+                transform: scale(1.01);
+            }
+        }
+    }
+    .member-role{
+        margin-left: 10px;
+    }
+    .club-description,.date-create-value{
+        // color:  $sub-heading-color;
+        color: rgb(81, 68, 68);
+        // color: blueviolet;
+    }
+}
+

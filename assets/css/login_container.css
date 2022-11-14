@@ -1,0 +1,51 @@
+.index-login-login {
+  width: 85%;
+  margin: auto;
+  background-color: #FFFFFF;
+}
+
+.logic-welcome {
+  margin: 2em 0;
+}
+.logic-welcome h1 {
+  color: #E99C2E;
+  margin: 0.4em 0;
+}
+.logic-welcome p {
+  color: gray;
+}
+
+.login-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.login-form {
+  margin: 5% 20%;
+}
+
+.login-img {
+  width: 100%;
+}
+.login-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 666px) {
+  .login-container {
+    height: 80vh;
+  }
+}
+@media (max-width: 666px) {
+  .login-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .login-form {
+    margin: 10%;
+  }
+}/*# sourceMappingURL=login_container.css.map */

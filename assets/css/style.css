@@ -2,13 +2,356 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+button {
+  background-color: #000000;
+  border-style: none;
+  color: #FFFFFF;
+  padding: 1em 2em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.86;
+}
+
+.input {
+  border-style: none;
+  padding: 1em 1em;
+  margin: 0.5em 0;
+  border-radius: 3px;
+  width: 100%;
+  border: 1px solid #231F20;
+  font-size: 1rem;
+}
+.input:focus {
+  outline: none;
+}
+
+.home-container-club-review {
+  width: 100%;
+  line-height: 1.6;
+}
+.home-container-club-review .clubs-cards {
+  width: 85%;
+  margin: 1em auto;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-items: center;
+  transition: 0.3s ease-in;
+}
+.home-container-club-review .club-card {
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px 1px rgba(169, 90, 255, 0.16);
+  max-width: 400px;
+  padding: 1em;
+  transition: 0.2s ease-in-out;
+}
+.home-container-club-review .club-card:hover {
+  transform: scale(1.01);
+}
+.home-container-club-review .club-member {
+  margin: 0.6em 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: -10px;
+  justify-content: center;
+  justify-items: center;
+}
+.home-container-club-review .club-logo {
+  width: 40%;
+  margin: auto;
+}
+.home-container-club-review .club-logo img {
+  width: 100%;
+  border-radius: 50%;
+}
+.home-container-club-review .member {
+  width: 60px;
+  text-align: center;
+}
+.home-container-club-review .member img {
+  width: 100%;
+  border-radius: 50%;
+}
+.home-container-club-review .member p {
+  font-size: 0.8rem;
+  text-align: center;
+}
+.home-container-club-review .member-profile {
+  width: 70px;
+  height: 70px;
+}
+.home-container-club-review .member-profile img {
+  border: 4px solid #FFFFFF;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  transition: 0.03 ease-in;
+}
+.home-container-club-review .member-profile img:hover, .home-container-club-review .member-profile img:active {
+  transform: scale(1.01);
+}
+.home-container-club-review .member-role {
+  margin-left: 10px;
+}
+.home-container-club-review .club-description, .home-container-club-review .date-create-value {
+  color: rgb(81, 68, 68);
+}
+
+.admin-dashboard-container {
+  text-align: center;
+  width: 85%;
+  margin: 3em auto;
+}
+.admin-dashboard-container .cards-container {
+  margin-top: 5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  gap: 2em;
+}
+.admin-dashboard-container .admin-option-card {
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  height: 30vh;
+  display: grid;
+  align-items: center;
+  margin: auto;
+  background-color: #E99C2E;
+}
+
+.club-container {
+  line-height: 1.6;
+  width: 85%;
+  margin: auto;
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+}
+
+.add-club-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+}
+.add-club-form textarea {
+  resize: none;
+}
+
+.add-club {
+  width: 85%;
+  margin: auto;
+}
+
+.card-search-admin-club {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: left;
+  line-height: 1.5;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.card-search-admin-club .card-search-club-logo {
+  width: 80px;
+  height: 80%;
+}
+.card-search-admin-club .card-search-club-logo img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.card-search-admin-club a {
+  text-decoration: none;
+  color: rgb(244, 114, 114);
+}
+
+.card-search-club-logo {
+  width: 80px;
+  height: 80%;
+}
+.card-search-club-logo img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.search-club {
+  width: 70%;
+  margin: auto;
+}
+.search-club hr {
+  color: whitesmoke;
+  margin: 1em;
+  background-color: whitesmoke;
+}
+
+@media (max-width: 666px) {
+  .card-search-admin-club {
+    text-align: center;
+    display: grid;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: 1fr;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .card-search-admin-club button {
+    margin-bottom: 3em;
+    margin-top: 3em;
+  }
+}
+.club-search-button button {
+  margin: 1em 0em;
+}
+
+.students-admin-container {
+  width: 85%;
+  margin: 1em auto 3em auto;
+}
+.students-admin-container .profile-preview {
+  width: 150px;
+  margin: 0em auto 2em auto;
+}
+.students-admin-container .profile-preview img {
+  width: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.students-admin-container form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.students-admin-container button {
+  justify-self: start;
+}
+
+@media (max-width: 666px) {
+  .students-admin-container form {
+    grid-template-columns: 1fr;
+  }
+}
+#profile_preview {
+  transition: 0.3s ease-in-out;
+}
+
+.club-search-information {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
+.navbar-container {
+  font-family: Roboto, sans-serif;
+  width: 100%;
+  background-color: whitesmoke;
+  color: rgb(29, 27, 27);
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-container span {
+  color: orange;
+}
+
+.nav-login {
+  display: flex;
+  list-style: none;
+  gap: 1em;
+}
+
+.nav-login a {
+  text-decoration: none;
+  background-color: #231F20;
+  padding: 0.7em 1.5em;
+  border-radius: 4px;
+  color: #FFFFFF;
+  transition: 0.2s ease-in-out;
+}
+.nav-login a:hover, .nav-login a:focus {
+  opacity: 0.96;
+}
+
+footer {
+  background-color: #231F20;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  margin: auto;
+  height: 15vh;
+}
+footer p, footer a, footer h3, footer h1 {
+  color: #FFFFFF;
+}
+footer ul {
+  display: inline-block;
+  width: 100%;
+  margin: auto;
+}
+footer li {
+  margin: 0 1em;
+  display: inline-block;
+}
+footer a {
+  text-decoration: none;
+  color: #E99C2E;
 }
 
 a {
   text-decoration: none;
-  all: unset;
-  color: white;
 }
-a:hover {
-  color: whitesmoke;
+
+.apprenat-img-profile {
+  border-radius: 50%;
+}
+
+.header-section-index {
+  width: 100%;
+  margin: auto;
+  height: 50vh;
+  background-image: url("../images/youcode_students_1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #FFFFFF;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.header-section-index * {
+  font-size: 3rem;
+  color: #E99C2E;
+}
+.header-section-index h1 {
+  filter: blur(0.01rem);
+}
+
+.navbar-youcode-logo {
+  width: 150px;
+}
+.navbar-youcode-logo img {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
