@@ -18,7 +18,7 @@
         <!-- <h1>Welcome Page Home </h1> -->
         <div class="our-clubs-title">
             <div class="our-clubs-title-background">
-                <h1 style="text-align:center ;margin:1em; color:orange;" >Our Clubs</h1>
+                <h1 >Our Clubs</h1>
             </div>
         </div>
     </div>

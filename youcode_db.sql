@@ -1,4 +1,4 @@
--- Active: 1668087176276@@localhost@3307
+-- Active: 1668087176276@@localhost@3307@youcode_clubs
 
 CREATE DATABASE IF NOT EXISTS youcode_clubs;
 
@@ -74,4 +74,4 @@ INSERT INTO membre VALUES(2,1,'Consultant');
 INSERT INTO membre VALUES(3,1,'membre');
 
 
-
+SELECT * FROM apprenant

@@ -1,5 +1,5 @@
 <?php
-    $conn = new mysqli("localhost",'root','','youcode_clubs_v2');
+    $conn = new mysqli("localhost",'root','','youcode_clubs',3307);
     
     // if($conn){
     //     echo "connection successful";

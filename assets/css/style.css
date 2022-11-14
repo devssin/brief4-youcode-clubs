@@ -272,7 +272,7 @@ button:hover {
 }
 
 .navbar-container span {
-  color: orange;
+  color: #348fe2;
 }
 
 .nav-login {
@@ -315,7 +315,7 @@ footer li {
 }
 footer a {
   text-decoration: none;
-  color: #E99C2E;
+  color: #348fe2;
 }
 
 a {
@@ -343,7 +343,7 @@ a {
 }
 .header-section-index * {
   font-size: 3rem;
-  color: #E99C2E;
+  color: #348fe2;
 }
 .header-section-index h1 {
   filter: blur(0.01rem);
