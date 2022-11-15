@@ -74,4 +74,5 @@ INSERT INTO membre VALUES(2,1,'Consultant');
 INSERT INTO membre VALUES(3,1,'membre');
 
 
-SELECT * FROM apprenant
+ALTER TABLE membre ADD CONSTRAINT FK_club FOREIGN KEY (id_club) REFERENCES club(id) ON DELETE SET NULL;
+ALTER TABLE membre ADD CONSTRAINT FK_apprenant FOREIGN KEY (id_membre) REFERENCES apprenant(id) ON DELETE CASCADE;

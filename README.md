@@ -16,8 +16,28 @@
         <img style="width:100%" src="././diagrammes/ClassDiagram1.jpg">
     </div>
     <div style=" ;margin:auto" id="sequenec-digram">
-        <h2>diagramme de Séquences</h2>
-        <img style="width:100%" src="./diagrammes/SequenceDiagram.jpg">
+        <h2>diagramme de Séquences (Ajouter Club)</h2>
+        <img style="width:100%" src="./diagrammes/sequence_1.jpg">
+    </div>
+    <div style=" ;margin:auto" id="sequenec-digram">
+        <h2>diagramme de Séquences (Modifier Club)</h2>
+        <img style="width:100%" src="./diagrammes/sequence_2.jpg">
+    </div>
+    <div style=" ;margin:auto" id="sequenec-digram">
+        <h2>diagramme de Séquences (Suprimer Club)</h2>
+        <img style="width:100%" src="./diagrammes/sequence_3.jpg">
+    </div>
+    <div style=" ;margin:auto" id="sequenec-digram">
+        <h2>diagramme de Séquences (Ajouter Membre)</h2>
+        <img style="width:100%" src="./diagrammes/sequence_4.jpg">
+    </div>
+    <div style=" ;margin:auto" id="sequenec-digram">
+        <h2>diagramme de Séquences (Modifier Membre)</h2>
+        <img style="width:100%" src="./diagrammes/sequence_5.jpg">
+    </div>
+    <div style=" ;margin:auto" id="sequenec-digram">
+        <h2>diagramme de Séquences (Suprimer Membre)</h2>
+        <img style="width:100%" src="./diagrammes/sequence_6.jpg">
     </div>
 </div>
 

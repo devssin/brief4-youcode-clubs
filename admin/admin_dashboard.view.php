@@ -18,7 +18,7 @@
                 <h1> <a href="../apprenant/user.php">students</a> </h1>
             </div>
             <div class="admin-option-card clubs-card">
-                <h1><a href="../clubs/clubs.view.php">clubs</a></h1>
+                <h1><a href="../clubs/club.php">clubs</a></h1>
             </div>
             <div class="admin-option-card events-card">
                 <h1>events</h1>
