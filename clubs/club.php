@@ -34,11 +34,7 @@
                         <label for="clubNmae" class="form-label">Club Name</label>
                         <input type="text" class="form-control" id="clubName" placeholder="Enter firstname">
                     </div>
-                    <!-- lastname -->
-                    <!-- <div class="mb-3">
-                        <label for="lastname" class="form-label">lastname</label>
-                        <input type="text" class="form-control" id="lastname" placeholder="Enter lastname">
-                    </div> -->
+                    
                     <!-- age -->
   
                     <!-- img link -->
@@ -75,35 +71,28 @@
                 <div class="modal-body">
                     <!-- firstname -->
                     <div class="mb-3">
-                        <label for="Ufirstname" class="form-label">Firstname</label>
-                        <input type="text" class="form-control" id="Ufirstname" placeholder="Enter firstname">
+                        <label for="clubNmae" class="form-label">Club Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter firstname">
                     </div>
-                    <!-- lastname -->
-                    <!-- <div class="mb-3">
-                        <label for="Ulastname" class="form-label">lastname</label>
-                        <input type="text" class="form-control" id="Ulastname" placeholder="Enter lastname">
-                    </div> -->
+                    
                     <!-- age -->
-                    <div class="mb-3">
-                        <label for="Uage" class="form-label">age</label>
-                        <input type="number" class="form-control" id="Uage" placeholder="Enter age">
-                    </div>
+  
                     <!-- img link -->
                     <div class="mb-3">
-                        <label for="UimgLink" class="form-label">image link </label>
-                        <input type="text" class="form-control" id="Uimg_link" placeholder="Enter image link  ">
+                        <label for="imgLink" class="form-label">Logo</label>
+                        <input type="text" class="form-control" id="logo_c" placeholder="Enter image link  ">
                     </div>
                     <!-- class -->
                     <div class="mb-3">
-                        <label for="Uclass" class="form-label">class id</label>
-                        <input type="text" class="form-control" id="Uclass_id" placeholder="Enter class id ">
+                        <label for="class" class="form-label">Description</label>
+                        <!-- <input type="text" class="form-control" id="class_id" placeholder="Enter class id "> -->
+                        <textarea name="description" id="desc" cols="30" rows="10" class="form-control"></textarea>
                     </div>
-                    <div class="mb-3">
-                        <input type="hidden" id="clubId">
-                    </div>
+                    
+                    <input type="hidden" name="id" id="clubId">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" onclick="Updateuser()">Update </button>
+                    <button type="button" class="btn btn-dark" onclick="updateClub()">Update </button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -133,51 +122,51 @@
             displayDataClub();
         })
 
-        function Updateuser() {
-            var clubId = clubId.value;
+        function updateClub() {
+            var clubId = $("#clubId").val();
+            
             console.log(clubId);
             
             
             var clubName = $("#name").val();
-            var logo = $("#logo").val();
-            var description = $("#descriprion").val();
-            alert(name+"/"+logo+"/"+clubId+"/"+description);
+
+            var logo = $("#logo_c").val();
+            var description = $("#desc").val();
+            console.log(clubId+'....'+clubName+"/"+logo+"/"+"/"+description);
             $.ajax({
-                url: "./Updateuser.php",
+                url: "./updateClub.php",
                 type: "POST",
                 data: {
-                    firstnameSend: firstnameAdd,
-                    img_linkSend: img_linkAdd,
-                    ageSend: ageAdd,
-                    class_idSend: classidAdd,
-                    UserIdSend :Uid
+                    name: clubName,
+                    logo: logo,
+                    description: description,
+                    club_id :clubId
                 },
                 success: function(data, status) {
                     console.log(status);
                     console.log(data);
-                    displayDataUser();
+                    displayDataClub();
                 }
             })
         }
 
-        function GetUpdateUser(member_id) {
+        function GetUpdateClub(club_id) {
 
-            console.log(member_id);
+            console.log(club_id);
             $.ajax({
-                url: './selectUser.php',
+                url: './selectClub.php',
                 type: 'post',
                 data: {
-                    member_idSend: member_id
+                    club_id: club_id
                 },
                 success: function(data, status) {
-                    displayDataUser();
+                    displayDataClub();
                     console.log(data);
-                    var user = JSON.parse(data);
-                    $("#Ufirstname").val(user.nom_c);
-                    $("#Uimg_link").val(user.img);
-                    $("#Uage").val(user.age);
-                    $("#Uclass_id").val(user.id_class);
-                    $("#UidUser").val(user.id);
+                    var club = JSON.parse(data);
+                    $("#name").val(club.nom);
+                    $("#logo_c").val(club.logo);
+                    $("#desc").val(club.description);
+                    $("#clubId").val(club.id);
                 }
             })
 

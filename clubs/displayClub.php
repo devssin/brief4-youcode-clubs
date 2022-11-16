@@ -38,7 +38,7 @@
                 <td>'.$date.'</td>
                 <td>
                     <button class="btn my-1 btn-danger" onclick="deleteClub('.$id.')"> Delete</button>
-                    <button type="button" class="btn btn-dark my-4" data-bs-toggle="modal" onclick="GetUpdateUser('.$id.')" data-bs-target="#UpdateModal"> update</button>
+                    <button type="button" class="btn btn-dark my-4" data-bs-toggle="modal" onclick="GetUpdateClub('.$id.')" data-bs-target="#UpdateModal"> update</button>
                 </td>
             </tr>
             ';
