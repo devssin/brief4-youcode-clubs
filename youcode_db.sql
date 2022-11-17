@@ -1,4 +1,4 @@
--- Active: 1668087176276@@localhost@3307@youcode_clubs
+-- Active: 1668335327925@@127.0.0.1@3306@youcode_clubs_v2
 
 CREATE DATABASE IF NOT EXISTS youcode_clubs;
 
@@ -74,4 +74,7 @@ INSERT INTO membre VALUES(2,1,'Consultant');
 INSERT INTO membre VALUES(3,1,'membre');
 
 
-SELECT * FROM apprenant
+SELECT * FROM apprenant INNER JOIN membre ON 
+id = membre.id_membre INNER JOIN club ON
+
+id_club = club.id;
