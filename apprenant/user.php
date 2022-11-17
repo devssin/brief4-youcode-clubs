@@ -1,4 +1,4 @@
-<?php  include "../includes/isLogedIn.inc.php" ?>
+<?php include "../includes/isLogedIn.inc.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,14 +11,13 @@
     <!-- bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>  
+<body>
 
 
     <!-- Button trigger modal -->
-    
-
     <!-- Modal Inert data -->
     <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -34,11 +33,6 @@
                         <label for="firstname" class="form-label">Firstname</label>
                         <input type="text" class="form-control" id="firstname" placeholder="Enter firstname">
                     </div>
-                    <!-- lastname -->
-                    <!-- <div class="mb-3">
-                        <label for="lastname" class="form-label">lastname</label>
-                        <input type="text" class="form-control" id="lastname" placeholder="Enter lastname">
-                    </div> -->
                     <!-- age -->
                     <div class="mb-3">
                         <label for="age" class="form-label">age</label>
@@ -54,10 +48,10 @@
                         <label for="class" class="form-label">class id</label>
                         <input type="text" class="form-control" id="class_id" placeholder="Enter class id ">
                     </div>
-                    
+
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" onclick="adduser()">Save </button>
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal" onclick="adduser()">Save </button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -73,18 +67,12 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Update user</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-
                 <div class="modal-body">
                     <!-- firstname -->
                     <div class="mb-3">
                         <label for="Ufirstname" class="form-label">Firstname</label>
                         <input type="text" class="form-control" id="Ufirstname" placeholder="Enter firstname">
                     </div>
-                    <!-- lastname -->
-                    <!-- <div class="mb-3">
-                        <label for="Ulastname" class="form-label">lastname</label>
-                        <input type="text" class="form-control" id="Ulastname" placeholder="Enter lastname">
-                    </div> -->
                     <!-- age -->
                     <div class="mb-3">
                         <label for="Uage" class="form-label">age</label>
@@ -111,7 +99,35 @@
             </div>
         </div>
     </div>
-    <?php include "../parts/navbar.view.part.php"?>
+
+    <!-- update club Modal  -->
+    <div class="modal fade" id="ClubUpdateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Update Club</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="Ufirstname" class="form-label">Clubs</label><br>
+                        <!-- <input type="text" class="form-control" id="Ufirstname" placeholder="Enter firstname"> -->
+                        <select class="form-select" id="selectClubs" aria-label="Default select example">
+                            <option selected>Select Club </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="hidden" id="UidUser">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" onclick="">Update</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php include "../parts/navbar.view.part.php" ?>
     <div class="container my-3 ">
         <!-- <h1 class="text-center">php CRUD opertations using bootstrap Modal and ajax</h1> -->
         <button type="button" class="btn btn-dark my-4" data-bs-toggle="modal" data-bs-target="#userModal">
@@ -122,24 +138,25 @@
 
         </div>
     </div>
-    <?php include "../parts/footer.view.part.php"?>
+    <?php include "../parts/footer.view.part.php" ?>
 
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
-
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
     <script>
         $(document).ready(() => {
 
             displayDataUser();
+            displayDataSelectClubs();
         })
 
         function Updateuser() {
             var Uid = UidUser.value;
             console.log(Uid);
-            
-            
+
+
             var firstnameAdd = $("#Ufirstname").val();
             var img_linkAdd = $("#Uimg_link").val();
             var ageAdd = $("#Uage").val();
@@ -153,7 +170,7 @@
                     img_linkSend: img_linkAdd,
                     ageSend: ageAdd,
                     class_idSend: classidAdd,
-                    UserIdSend :Uid
+                    UserIdSend: Uid
                 },
                 success: function(data, status) {
                     console.log(status);
@@ -217,6 +234,22 @@
 
         }
 
+        function displayDataSelectClubs() {
+            var displatData = "true";
+            $.ajax({
+                url: './displaySelectClubs.php',
+                type: 'post',
+                data: {
+                    displaySend: displatData
+                },
+                success: function(data, status) {
+                    $("#selectClubs").html(data);
+                }
+            })
+            
+        }
+        
+        
         function adduser() {
             var firstnameAdd = $("#firstname").val();
             var img_linkAdd = $("#img_link").val();
@@ -237,6 +270,11 @@
                     displayDataUser();
                 }
             })
+
+            // modal fade
+            $("#userModal").animate().css("display", "none ");
+            $("#userModal").addClass("modal fade");;
+
         };
     </script>
 </body>

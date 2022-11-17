@@ -261,6 +261,10 @@ button:hover {
 }
 
 /*# sourceMappingURL=style.css.map */
+tr {
+  text-align: center;
+}
+
 .navbar-container {
   font-family: Roboto, sans-serif;
   width: 100%;
