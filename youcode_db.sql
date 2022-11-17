@@ -1,4 +1,4 @@
--- Active: 1668087176276@@localhost@3307
+-- Active: 1668335327925@@127.0.0.1@3306@youcode_clubs_v2
 
 CREATE DATABASE IF NOT EXISTS youcode_clubs;
 
@@ -74,4 +74,12 @@ INSERT INTO membre VALUES(2,1,'Consultant');
 INSERT INTO membre VALUES(3,1,'membre');
 
 
+<<<<<<< HEAD
+SELECT * FROM apprenant INNER JOIN membre ON 
+id = membre.id_membre INNER JOIN club ON
 
+id_club = club.id;
+=======
+ALTER TABLE membre ADD CONSTRAINT FK_club FOREIGN KEY (id_club) REFERENCES club(id) ON DELETE SET NULL;
+ALTER TABLE membre ADD CONSTRAINT FK_apprenant FOREIGN KEY (id_membre) REFERENCES apprenant(id) ON DELETE CASCADE;
+>>>>>>> f0e3e5487a7bb5574e3e17e8703cf95a07bddc58

@@ -10,6 +10,10 @@
 
 /*# sourceMappingURL=style.css.map */
 
+tr{
+  text-align: center  ;
+  
+}
 
 .navbar-container{
   font-family: $body-font;
@@ -22,7 +26,7 @@
 }
 
 .navbar-container span{
-  color: orange;
+  color: $primary-color;
 }
 
 .nav-login{
@@ -66,7 +70,7 @@ footer{
     }
     a{
         text-decoration: none;
-        color: $primary-orange;
+        color: $primary-color;
     }
 }
 
@@ -94,7 +98,7 @@ a{
   align-items: center;
   *{
     font-size: 3rem;
-    color: $primary-orange;
+    color: $primary-color;
   }
   
   h1{
