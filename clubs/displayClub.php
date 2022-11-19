@@ -3,7 +3,7 @@
     
     
     if(isset($_POST["displaySend"])){
-        $table = '<table class="table text-center align-items-center">
+        $table = '<table class="table text-center align-items-center ">
         <thead class="bg-dark text-white ">
             <tr>
                 <th scope="col">#</th>

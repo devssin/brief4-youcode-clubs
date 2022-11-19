@@ -24,7 +24,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">New user</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">New Club</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
@@ -32,7 +32,7 @@
                     <!-- firstname -->
                     <div class="mb-3">
                         <label for="clubNmae" class="form-label">Club Name</label>
-                        <input type="text" class="form-control" id="clubName" placeholder="Enter firstname">
+                        <input type="text" class="form-control" id="clubName" placeholder="(Art Club, Sport Club ....)">
                     </div>
                     
                     <!-- age -->
@@ -40,7 +40,7 @@
                     <!-- img link -->
                     <div class="mb-3">
                         <label for="imgLink" class="form-label">Logo</label>
-                        <input type="text" class="form-control" id="logo" placeholder="Enter image link  ">
+                        <input type="text" class="form-control" id="logo" placeholder="Enter logo link  ">
                     </div>
                     <!-- class -->
                     <div class="mb-3">
@@ -51,7 +51,7 @@
                     
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" onclick="addClub()">Save </button>
+                    <button type="button" class="btn btn-dark" onclick="addClub() " data-bs-dismiss="modal">Save </button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                     <!-- firstname -->
                     <div class="mb-3">
                         <label for="clubNmae" class="form-label">Club Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter firstname">
+                        <input type="text" class="form-control" id="name" placeholder="(Art Club, Sport Club ....)">
                     </div>
                     
                     <!-- age -->
@@ -80,7 +80,7 @@
                     <!-- img link -->
                     <div class="mb-3">
                         <label for="imgLink" class="form-label">Logo</label>
-                        <input type="text" class="form-control" id="logo_c" placeholder="Enter image link  ">
+                        <input type="text" class="form-control" id="logo_c" placeholder="Enter Logo link  ">
                     </div>
                     <!-- class -->
                     <div class="mb-3">
@@ -92,14 +92,14 @@
                     <input type="hidden" name="id" id="clubId">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" onclick="updateClub()">Update </button>
+                    <button type="button" class="btn btn-dark" onclick="updateClub()" data-bs-dismiss="modal">Update </button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
     <?php include "../parts/navbar.view.part.php"?>
-    <div class="container my-3 ">
+    <div class="container my-3">
         <!-- <h1 class="text-center">php CRUD opertations using bootstrap Modal and ajax</h1> -->
         <button type="button" class="btn btn-dark my-4" data-bs-toggle="modal" data-bs-target="#userModal">
             Add new users
