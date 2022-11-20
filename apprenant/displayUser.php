@@ -55,12 +55,12 @@
 
             $table .='
             <tr class="text-center align-items-center">
-                <th scope="row">'.$member_id.'</th>
+                <th scope="row" id="userId">'.$member_id.'</th>
                 <td><img class="apprenat-img-profile" src='.$imglink.' /></td>
                 <td>'.$firstname.'</td>
                 <td>'.$age.'</td>
                 <td>'.$class_belong.'</td>
-                <td>'.$club_nom.' <a type="button" class="" data-bs-toggle="modal" onclick="" data-bs-target="#ClubUpdateModal" ><i class="fa-regular fa-pen-to-square"></i></a></td>
+                <td>'.$club_nom.' <a type="button" class="" data-bs-toggle="modal" onclick="GetUpdateUserClub('.$member_id.')" data-bs-target="#ClubUpdateModal" ><i class="fa-regular fa-pen-to-square"></i></a></td>
                 <td>'.$role.' <i class="fa-regular fa-pen-to-square"></i></td>
                 <td>
                     <button class="btn my-1 btn-danger" onclick="deleteUser('.$member_id.')"> Delete</button>

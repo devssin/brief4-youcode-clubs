@@ -89,7 +89,7 @@
                         <input type="text" class="form-control" id="Uclass_id" placeholder="Enter class id ">
                     </div>
                     <div class="mb-3">
-                        <input type="hidden" id="UidUser">
+                        <input type="hidden" id="userId">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -121,7 +121,7 @@
                     <input type="hidden" id="UidUser">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" onclick="">Update</button>
+                    <button type="button" class="btn btn-dark" onclick="updateUserClub()">Update</button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -156,7 +156,6 @@
             var Uid = UidUser.value;
             console.log(Uid);
 
-
             var firstnameAdd = $("#Ufirstname").val();
             var img_linkAdd = $("#Uimg_link").val();
             var ageAdd = $("#Uage").val();
@@ -179,7 +178,31 @@
                 }
             })
         }
-
+        
+        var userIdForUpdateClub ="";
+        function GetUpdateUserClub(member_id){
+            userIdForUpdateClub = member_id;
+        }
+        function updateUserClub(member_id){
+            // valueSelect = $("#selectClubs").select.val;
+            var valueSelectClub = $('#selectClubs').find(":selected").val();
+            console.log(valueSelectClub);
+            console.log(userIdForUpdateClub);
+            $.ajax({
+                url: './updateUserClub.php',
+                type: 'post',
+                data: {
+                    member_idSend: userIdForUpdateClub,
+                    club_idSend: valueSelectClub
+                },
+                success: function(data, status) {
+                    console.log(data);
+                    displayDataUser();
+                    
+                }
+            })
+        }
+        
         function GetUpdateUser(member_id) {
 
             console.log(member_id);
