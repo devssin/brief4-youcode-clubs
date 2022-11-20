@@ -1,4 +1,4 @@
--- Active: 1668335327925@@127.0.0.1@3306@youcode_clubs_v2
+-- Active: 1668087176276@@localhost@3307@youcode_clubs
 
 CREATE DATABASE IF NOT EXISTS youcode_clubs;
 
@@ -41,6 +41,8 @@ INSERT INTO apprenant(nom_c , age , img, id_class) VALUES ('Yassine AAYNE ALHAYA
 INSERT INTO apprenant(nom_c , age , img, id_class) VALUES ('Mehdi Elhajouji', 23, 'https://intranet.youcode.ma/storage/users/profile/thumbnail/456-1664881441.JPG', 2);
 INSERT INTO apprenant(nom_c , age , img, id_class) VALUES ('Fadwa Cherqui', 21, 'https://intranet.youcode.ma/storage/users/profile/thumbnail/435-1664881715.JPG', 4);
 INSERT INTO apprenant(nom_c , age , img, id_class) VALUES ('Mohammed Moustarhfir', 22, 'https://intranet.youcode.ma/storage/users/profile/thumbnail/488-1664882227.JPG', 5);
+INSERT INTO apprenant(nom_c , age , img, id_class) VALUES ('Alae El Oula', 24, 'https://intranet.youcode.ma/storage/users/profile/thumbnail/426-1664881657.JPG', 5);
+INSERT INTO apprenant(nom_c , age , img, id_class) VALUES ('Mohammed Roumami', 27, 'https://intranet.youcode.ma/storage/users/profile/thumbnail/448-1664881843.JPG', 5);
 
 
 
@@ -74,12 +76,10 @@ INSERT INTO membre VALUES(2,1,'Consultant');
 INSERT INTO membre VALUES(3,1,'membre');
 
 
-<<<<<<< HEAD
 SELECT * FROM apprenant INNER JOIN membre ON 
 id = membre.id_membre INNER JOIN club ON
-
 id_club = club.id;
-=======
+
+
 ALTER TABLE membre ADD CONSTRAINT FK_club FOREIGN KEY (id_club) REFERENCES club(id) ON DELETE SET NULL;
 ALTER TABLE membre ADD CONSTRAINT FK_apprenant FOREIGN KEY (id_membre) REFERENCES apprenant(id) ON DELETE CASCADE;
->>>>>>> f0e3e5487a7bb5574e3e17e8703cf95a07bddc58

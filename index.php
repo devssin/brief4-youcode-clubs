@@ -9,7 +9,6 @@ $statement->execute();
 $clubs = $statement->fetchAll(PDO::FETCH_ASSOC);
 $club_first = array_slice($clubs, 0, 3);
 $club_second = array_slice($clubs, 3, 3);
-var_dump($club_second);
 
 
 
@@ -42,43 +41,75 @@ var_dump($club_second);
                 <div class="rwo">
                     <div class="col-md-12">
                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <div class="carousel-indicators mt-5">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active " aria-current="true" aria-label="Slide 1"></button>
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                             </div>
 
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="row">
-                                        <?php foreach ($club_first as $key => $club) :?>
-                                        <div class="col-md-4">
-                                            <div class="single-box bg-white p-3 text-center" >
-                                                <div class="img-area"><img src="<?php echo $club['logo'] ;?>" alt="" style=" width: 100px; border-radius: 50%;"></div>
-                                                <div class="img-text">
-                                                    <h2><?php echo $club['nom'] ; ?></h2>
-                                                    <p><?php echo $club['description'] ?></p>
-                                                </div>
+                                        <?php foreach ($club_first as $key => $club) : ?>
+                                            <div class="col-md-4 mb-5">
+                                                <div class="single-box bg-white p-3 text-center ">
+                                                    <div class="img-area"><img src="<?php echo $club['logo']; ?>" alt=""></div>
+                                                    <div class="img-text">
+                                                        <h2><?php echo $club['nom']; ?></h2>
+                                                        <p><?php echo $club['description'] ?></p>
+                                                    </div>
 
+                                                    <div class="membres">
+                                                        <?php
+                                                        $id = $club['id'];
+                                                        $query = "SELECT img FROM apprenant JOIN membre on apprenant.id = membre.id_membre join club on membre.id_club = club.id WHERE club.id = $id";
+                                                        $statement = $pdo->prepare($query);
+                                                        $statement->execute();
+                                                        $membres = $statement->fetchAll(PDO::FETCH_ASSOC);
+                                                        foreach ($membres as $key => $membre) :
+
+                                                        ?>
+                                                            <img src="<?php echo $membre['img'] ?>" alt="" class="membre-img">
+
+
+
+                                                        <?php endforeach; ?>
+                                                    </div>
+
+                                                </div>
                                             </div>
-                                        </div>
                                         <?php endforeach; ?>
-                                       
+
                                     </div>
                                 </div>
-                            
+
                                 <div class="carousel-item">
                                     <div class="row">
-                                        <?php foreach ($club_second as $key => $club) :?>
-                                        <div class="col-md-4">
-                                            <div class="single-box p-3 text-center">
-                                                <div class="img-area"><img src="<?php echo $club['logo'] ;?>" alt="" style=" width: 100px; height: 100px;border-radius: 50%;"></div>
-                                                <div class="img-text">
-                                                    <h2><?php echo $club['nom'] ;?></h2>
-                                                    <p><?php echo $club['description']; ?></p>
-                                                </div>
+                                        <?php foreach ($club_second as $key => $club) : ?>
+                                            <div class="col-md-4 mb-5">
+                                                <div class="single-box p-3 text-center bg-white">
+                                                    <div class="img-area"><img src="<?php echo $club['logo']; ?>" alt=""></div>
+                                                    <div class="img-text">
+                                                        <h2><?php echo $club['nom']; ?></h2>
+                                                        <p><?php echo $club['description']; ?></p>
+                                                    </div>
+                                                    <div class="membres">
+                                                        <?php
+                                                        $id = $club['id'];
+                                                        $query = "SELECT img FROM apprenant JOIN membre on apprenant.id = membre.id_membre join club on membre.id_club = club.id WHERE club.id = $id";
+                                                        $statement = $pdo->prepare($query);
+                                                        $statement->execute();
+                                                        $membres = $statement->fetchAll(PDO::FETCH_ASSOC);
+                                                        foreach ($membres as $key => $membre) :
 
+                                                        ?>
+                                                            <img src="<?php echo $membre['img'] ?>" alt="" class="membre-img">
+
+
+
+                                                        <?php endforeach; ?>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
                                         <?php endforeach; ?>
                                     </div>
                                 </div>

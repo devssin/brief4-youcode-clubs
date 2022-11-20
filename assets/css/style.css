@@ -305,7 +305,10 @@ footer {
   margin: auto;
   height: 15vh;
 }
-footer p, footer a, footer h3, footer h1 {
+footer p,
+footer a,
+footer h3,
+footer h1 {
   color: #FFFFFF;
 }
 footer ul {
@@ -358,4 +361,33 @@ a {
 }
 .navbar-youcode-logo img {
   width: 100%;
+}
+
+.single-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.098) !important;
+}
+.single-box img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.single-box h2 {
+  font-size: 2rem;
+}
+.single-box p {
+  font-size: 1rem;
+}
+
+.membre-img {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  margin-left: -10px;
 }/*# sourceMappingURL=style.css.map */
