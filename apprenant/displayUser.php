@@ -61,7 +61,7 @@
                 <td>'.$age.'</td>
                 <td>'.$class_belong.'</td>
                 <td>'.$club_nom.' <a type="button" class="" data-bs-toggle="modal" onclick="GetUpdateUserClub('.$member_id.')" data-bs-target="#ClubUpdateModal" ><i class="fa-regular fa-pen-to-square"></i></a></td>
-                <td>'.$role.' <i class="fa-regular fa-pen-to-square"></i></td>
+                <td>'.$role.' <a type="button" class="" data-bs-toggle="modal" onclick="GetUpdateUserRole('.$member_id.')" data-bs-target="#RoleUpdateModal" ><i class="fa-regular fa-pen-to-square"></i></a></td>
                 <td>
                     <button class="btn my-1 btn-danger" onclick="deleteUser('.$member_id.')"> Delete</button>
                     <button type="button" class="btn btn-dark my-4" data-bs-toggle="modal" onclick="GetUpdateUser('.$member_id.')" data-bs-target="#UpdateModal"> update</button>

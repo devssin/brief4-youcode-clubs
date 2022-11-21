@@ -127,6 +127,31 @@
             </div>
         </div>
     </div>
+    <!-- update Role Modal  -->
+    <div class="modal fade" id="RoleUpdateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Update Role</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="Ufirstname" class="form-label">Update Role</label><br>
+                        <input type="text" value="Update role" class="form-control " id="input_role">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="hidden" id="UidUser">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" onclick="updateUserRole()">Update</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <?php include "../parts/navbar.view.part.php" ?>
     <div class="container my-3 ">
         <!-- <h1 class="text-center">php CRUD opertations using bootstrap Modal and ajax</h1> -->
@@ -179,21 +204,45 @@
             })
         }
         
-        var userIdForUpdateClub ="";
+        var userIdForUpdate ="";
+        
         function GetUpdateUserClub(member_id){
-            userIdForUpdateClub = member_id;
+            userIdForUpdate = member_id;
         }
+        
+        function GetUpdateUserRole(member_id){
+            userIdForUpdate = member_id;
+            console.log(userIdForUpdate);
+        }
+        
         function updateUserClub(member_id){
-            // valueSelect = $("#selectClubs").select.val;
             var valueSelectClub = $('#selectClubs').find(":selected").val();
             console.log(valueSelectClub);
-            console.log(userIdForUpdateClub);
+            console.log(userIdForUpdate);
             $.ajax({
                 url: './updateUserClub.php',
                 type: 'post',
                 data: {
                     member_idSend: userIdForUpdateClub,
                     club_idSend: valueSelectClub
+                },
+                success: function(data, status) {
+                    console.log(data);
+                    displayDataUser();
+                    
+                }
+            })
+        }
+        
+        function updateUserRole(member_id){
+            var valueRole = $('#input_role').val();
+            
+            $.ajax({
+                url: './updateUserRole.php',
+                type: 'post',
+                data: {
+                    member_idSend: userIdForUpdate,
+                    role_Send: valueRole
                 },
                 success: function(data, status) {
                     console.log(data);
