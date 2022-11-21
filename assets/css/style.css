@@ -390,4 +390,12 @@ a {
   height: 50px !important;
   border-radius: 50%;
   margin-left: -10px;
+}
+
+.carousel-indicators .indic {
+  height: 20px !important;
+  width: 20px !important;
+  border-radius: 50% !important;
+  transform: translateY(30px);
+  background-color: black;
 }/*# sourceMappingURL=style.css.map */

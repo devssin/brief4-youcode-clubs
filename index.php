@@ -37,21 +37,21 @@ $club_second = array_slice($clubs, 3, 3);
                 <h1 class="text-center">Our Clubs</h1>
             </div>
 
-            <div class="container">
+            <div class="container my-5">
                 <div class="rwo">
                     <div class="col-md-12">
                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
                             <div class="carousel-indicators mt-5">
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active " aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active indic" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="indic" aria-label="Slide 2"></button>
                             </div>
 
-                            <div class="carousel-inner">
+                            <div class="carousel-inner ">
                                 <div class="carousel-item active">
                                     <div class="row">
                                         <?php foreach ($club_first as $key => $club) : ?>
                                             <div class="col-md-4 mb-5">
-                                                <div class="single-box bg-white p-3 text-center ">
+                                                <div class="single-box bg-white p-3 text-center rounded">
                                                     <div class="img-area"><img src="<?php echo $club['logo']; ?>" alt=""></div>
                                                     <div class="img-text">
                                                         <h2><?php echo $club['nom']; ?></h2>
@@ -59,6 +59,7 @@ $club_second = array_slice($clubs, 3, 3);
                                                     </div>
 
                                                     <div class="membres">
+                                                        <h5>Club membres</h5>
                                                         <?php
                                                         $id = $club['id'];
                                                         $query = "SELECT img FROM apprenant JOIN membre on apprenant.id = membre.id_membre join club on membre.id_club = club.id WHERE club.id = $id";
@@ -86,7 +87,7 @@ $club_second = array_slice($clubs, 3, 3);
                                     <div class="row">
                                         <?php foreach ($club_second as $key => $club) : ?>
                                             <div class="col-md-4 mb-5">
-                                                <div class="single-box p-3 text-center bg-white">
+                                                <div class="single-box p-3 text-center bg-white rounded">
                                                     <div class="img-area"><img src="<?php echo $club['logo']; ?>" alt=""></div>
                                                     <div class="img-text">
                                                         <h2><?php echo $club['nom']; ?></h2>
