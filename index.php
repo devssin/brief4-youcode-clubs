@@ -59,7 +59,7 @@ $club_second = array_slice($clubs, 3, 3);
                                                     </div>
 
                                                     <div class="membres">
-                                                        <h5>Club membres</h5>
+                                                        <h6>Club Membres</h6>
                                                         <?php
                                                         $id = $club['id'];
                                                         $query = "SELECT img FROM apprenant JOIN membre on apprenant.id = membre.id_membre join club on membre.id_club = club.id WHERE club.id = $id";
@@ -94,6 +94,7 @@ $club_second = array_slice($clubs, 3, 3);
                                                         <p><?php echo $club['description']; ?></p>
                                                     </div>
                                                     <div class="membres">
+                                                        <h6>Club Membres</h6>
                                                         <?php
                                                         $id = $club['id'];
                                                         $query = "SELECT img FROM apprenant JOIN membre on apprenant.id = membre.id_membre join club on membre.id_club = club.id WHERE club.id = $id";
