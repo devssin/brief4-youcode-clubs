@@ -9,8 +9,8 @@
                 <th scope="col">#</th>
                 <th scope="col">image</th>
                 <th scope="col">firstname</th>
-                <th scope="col">age</th>
-                <th scope="col">class_belong</th>
+                <th class="age" scope="col">age</th>
+                <th class="class_belong" scope="col">class_belong</th>
                 <th scope="col">club nom</th>
                 <th scope="col">role in club </th>
                 <th scope="col">operation</th>
@@ -58,8 +58,8 @@
                 <th scope="row" id="userId">'.$member_id.'</th>
                 <td><img class="apprenat-img-profile" src='.$imglink.' /></td>
                 <td>'.$firstname.'</td>
-                <td>'.$age.'</td>
-                <td>'.$class_belong.'</td>
+                <td class="age">'.$age.'</td>
+                <td class="class_belong">'.$class_belong.'</td>
                 <td>'.$club_nom.' <a type="button" class="" data-bs-toggle="modal" onclick="GetUpdateUserClub('.$member_id.')" data-bs-target="#ClubUpdateModal" ><i class="fa-regular fa-pen-to-square"></i></a></td>
                 <td>'.$role.' <a type="button" class="" data-bs-toggle="modal" onclick="GetUpdateUserRole('.$member_id.')" data-bs-target="#RoleUpdateModal" ><i class="fa-regular fa-pen-to-square"></i></a></td>
                 <td>

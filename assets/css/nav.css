@@ -1,0 +1,133 @@
+
+.navbar{
+    display: grid;
+    width: 100%;
+    background-color: #28292D;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    filter: drop-shadow(0px 1.5px 1.5px rgba(0, 0, 0, 0.25));
+}
+
+.burger-menu-list{
+    display: none;
+}
+ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.burger-menu{
+    display: none;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.burger-menu img{
+    justify-self: center;
+    margin-left: 50px;
+    
+}
+.navbar-logo{
+    width: 60%;
+    height: 60%;
+    justify-self: center;
+    display: flex;
+}
+.navbar-iconshop{
+    justify-self: center;
+}
+.navbar-iconshop> img{
+    height: 50%;
+}
+
+@media (min-width: 1000px) {
+    .navbar-logo{
+        width: 50%;
+        height: 50%;
+        justify-self: center;
+        display: flex;
+    }
+}
+
+@media (min-width: 760px){
+    .burger-menu{
+        display: none;
+    }
+    .burger-menu-list{
+        display: none;
+    }
+}
+
+@media (max-width: 760px) {
+    .burger-menu{
+        display: block;
+    }
+   .nav-center{
+    display: none;
+   }
+   .burger-menu-list{
+    display: none;
+}
+   .navbar{
+    display: grid;
+    width: 100%;
+    background-color: #28292D;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-content: center;
+    }
+    .navbar-iconshop{
+        justify-self: center;
+    }
+    .navbar-iconshop> img{
+        height: 100%;
+    }
+
+    .navbar-logo{
+        width: 80%;
+        height: 80%;
+        /* grid-column: span 2; */
+        justify-self: right;
+        display: flex;
+    }
+}
+
+.burger-menu-list{
+    /* border: 1px  solid white; */
+    display: none;
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    border-radius: 7px;
+    background-color: #28292D;
+    margin-left: 10% ;
+    padding: 2em;
+    transition: 0.3s ease-in-out;
+    
+}
+
+
+
+.burger-menu-list ul{
+    display: block;    
+}
+
+.burger-menu-list ul li {
+    margin: 1em;
+    transition: 0.3s ease-in-out;
+    
+}
+
+.burger-menu-list ul li:hover {
+    margin: 1em;
+    background-color: red;
+    border-radius: 3px;
+    padding: 5px;
+    
+}
