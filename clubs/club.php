@@ -102,7 +102,7 @@
     <div class="container my-3">
         <!-- <h1 class="text-center">php CRUD opertations using bootstrap Modal and ajax</h1> -->
         <button type="button" class="btn btn-dark my-4" data-bs-toggle="modal" data-bs-target="#userModal">
-            Add new users
+            Add new clubs
         </button>
 
         <div id="displayDataTable">
@@ -125,7 +125,6 @@
         function updateClub() {
             var clubId = $("#clubId").val();
             
-            console.log(clubId);
             
             
             var clubName = $("#name").val();
@@ -152,7 +151,6 @@
 
         function GetUpdateClub(club_id) {
 
-            console.log(club_id);
             $.ajax({
                 url: './selectClub.php',
                 type: 'post',
