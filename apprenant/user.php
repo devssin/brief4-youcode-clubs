@@ -44,8 +44,18 @@
                     </div>
                     <!-- class -->
                     <div class="mb-3">
-                        <label for="class" class="form-label">class id</label>
-                        <input type="text" class="form-control" id="class_id" placeholder="Enter class id ">
+                        <label for="class" class="form-label">class </label>
+                        <!-- <input type="text" class="form-control" id="class_id" placeholder="Enter class id "> -->
+                        <select class="form-select" id="class-select" aria-label="Default select example">
+                            <?php
+                                $query = "SELECT * FROM class";
+                                $conn = new mysqli("localhost",'root','','youcode_clubs_v2',3306);  
+                                $result = mysqli_query($conn, $query);
+                                while ($row = mysqli_fetch_assoc($result )) {
+                                    echo "<option value='{$row['id']}'>{$row['nom']}</option>";
+                                }
+                            ?>
+                        </select>
                     </div>
 
                 </div>
@@ -85,7 +95,17 @@
                     <!-- class -->
                     <div class="mb-3">
                         <label for="Uclass" class="form-label">class id</label>
-                        <input type="text" class="form-control" id="Uclass_id" placeholder="Enter class id ">
+                        <select class="form-select" id="Uselect-class" aria-label="Default select example">
+                            <?php
+                                $query = "SELECT * FROM class";
+                                $conn = new mysqli("localhost",'root','','youcode_clubs_v2',3306);  
+                                $result = mysqli_query($conn, $query);
+                                while ($row = mysqli_fetch_assoc($result )) {
+                                    echo "<option value='{$row['id']}'>{$row['nom']}</option>";
+                                }
+                            ?>
+                        </select>
+                        <!-- <input type="text" class="form-control" id="Uclass_id" placeholder="Enter class id "> -->
                     </div>
                     <div class="mb-3">
                         <input type="hidden" id="userId">
@@ -150,7 +170,7 @@
             </div>
         </div>
     </div>
-    
+
     <?php include "../parts/navbar.view.part.php" ?>
     <div class="container my-3 ">
         <!-- <h1 class="text-center">php CRUD opertations using bootstrap Modal and ajax</h1> -->
@@ -169,7 +189,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
-    
+
     <?php include "../includes/script.inc.php" ?>
 
     <script>
@@ -186,7 +206,9 @@
             var firstnameAdd = $("#Ufirstname").val();
             var img_linkAdd = $("#Uimg_link").val();
             var ageAdd = $("#Uage").val();
-            var classidAdd = $("#Uclass_id").val();
+            // var classidAdd = $("#Uclass_id").val();
+            var classidAdd = $('#Uselect-class').find(":selected").val();
+
             // alert(firstnameAdd+"/"+lastnameAdd+"/"+ageAdd+"/"+classidAdd);
             $.ajax({
                 url: "./Updateuser.php",
@@ -205,19 +227,19 @@
                 }
             })
         }
-        
-        var userIdForUpdate ="";
-        
-        function GetUpdateUserClub(member_id){
+
+        var userIdForUpdate = "";
+
+        function GetUpdateUserClub(member_id) {
             userIdForUpdate = member_id;
         }
-        
-        function GetUpdateUserRole(member_id){
+
+        function GetUpdateUserRole(member_id) {
             userIdForUpdate = member_id;
             console.log(userIdForUpdate);
         }
-        
-        function updateUserClub(member_id){
+
+        function updateUserClub(member_id) {
             var valueSelectClub = $('#selectClubs').find(":selected").val();
             console.log(valueSelectClub);
             console.log(userIdForUpdate);
@@ -231,14 +253,14 @@
                 success: function(data, status) {
                     console.log(data);
                     displayDataUser();
-                    
+
                 }
             })
         }
-        
-        function updateUserRole(member_id){
+
+        function updateUserRole(member_id) {
             var valueRole = $('#input_role').val();
-            
+
             $.ajax({
                 url: './updateUserRole.php',
                 type: 'post',
@@ -249,11 +271,11 @@
                 success: function(data, status) {
                     console.log(data);
                     displayDataUser();
-                    
+
                 }
             })
         }
-        
+
         function GetUpdateUser(member_id) {
 
             console.log(member_id);
@@ -321,15 +343,17 @@
                     $("#selectClubs").html(data);
                 }
             })
-            
+
         }
-        
-        
+
+
         function adduser() {
             var firstnameAdd = $("#firstname").val();
             var img_linkAdd = $("#img_link").val();
             var ageAdd = $("#age").val();
             var classidAdd = $("#class_id").val();
+            var classidAdd = $('#class-select').find(":selected").val();
+
             $.ajax({
                 url: "./insertuser.php",
                 type: "POST",

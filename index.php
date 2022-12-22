@@ -106,8 +106,6 @@ $club_second = array_slice($clubs, 3, 3);
                                                         ?>
                                                             <img src="<?php echo $membre['img'] ?>" alt="" class="membre-img">
 
-
-
                                                         <?php endforeach; ?>
                                                     </div>
                                                 </div>
