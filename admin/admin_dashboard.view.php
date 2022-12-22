@@ -30,7 +30,7 @@
     </div>
     <?php include "../parts/footer.view.part.php" ?>
     
-    <?php include "./includes/script.inc.php" ?>
+    <?php include "../includes/script.inc.php" ?>
 
 </body>
 </html>

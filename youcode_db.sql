@@ -1,4 +1,4 @@
--- Active: 1668087176276@@localhost@3307@youcode_clubs
+-- Active: 1671639841603@@localhost@3306@youcode_clubs_v2
 
 CREATE DATABASE IF NOT EXISTS youcode_clubs;
 

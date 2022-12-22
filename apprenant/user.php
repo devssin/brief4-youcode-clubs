@@ -180,9 +180,9 @@
         })
 
         function Updateuser() {
+            var UidUser = document.getElementById("UidUser");
             var Uid = UidUser.value;
             console.log(Uid);
-
             var firstnameAdd = $("#Ufirstname").val();
             var img_linkAdd = $("#Uimg_link").val();
             var ageAdd = $("#Uage").val();
@@ -287,6 +287,7 @@
                     member_idSend: member_id
                 },
                 success: function(data, status) {
+                    console.log(data);
                     displayDataUser();
                 }
             })

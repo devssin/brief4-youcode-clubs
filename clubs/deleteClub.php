@@ -1,9 +1,7 @@
 <?php
     include "../apprenant/connect.php";
     
-    echo $_POST;
     extract($_POST);
-
     if(isset($_POST) && isset($_POST["club_id"])){
     
         $club_id = $_POST["club_id"];

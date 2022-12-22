@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO("mysql:host=localhost;port=3307;dbname=youcode_clubs", 'root', '');
+$pdo = new PDO("mysql:host=localhost;port=3306;dbname=youcode_clubs_v2", 'root', '');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $statement = $pdo->prepare('SELECT * FROM club ORDER BY date_creation desc limit 6');
@@ -129,6 +129,7 @@ $club_second = array_slice($clubs, 3, 3);
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <?php include "./includes/script.inc.php" ?>
 
 </body>
 
